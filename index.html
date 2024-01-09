@@ -6,6 +6,8 @@
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script> 
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/js/script.js"></script>
+    <link rel="stylesheet" href="./css/style.css"/>
     <title>Dashboard</title>
 </head>
 <body>
@@ -19,21 +21,21 @@
                             <div class="text-2xl hover:bg-blue-700 ease-in duration-300 text-pointer px-3 py-2 rounded-xl hover:shadow-xl hover:text-white"><ion-icon name="search-outline"></ion-icon></div>
                         </div>
                         <div class="flex flex-row lg:flex-col lg:space-y-4 items-center justify-around w-full">
-                            <div class="lg:text-2xl text-3xl bg-blue-700 ease-in duration-300 text-pointer px-3 py-2 rounded-xl shadow-xl text-white"><ion-icon name="home-outline"></ion-icon></div>
-                            <div class="lg:text-2xl text-3xl hover:bg-blue-700 ease-in duration-300 text-pointer px-3 py-2 rounded-xl hover:shadow-xl hover:text-white"><ion-icon name="file-tray-full-outline"></ion-icon></ion-icon></div>
-                            <div class="lg:text-2xl text-3xl hover:bg-blue-700 ease-in duration-300 text-pointer px-3 py-2 rounded-xl hover:shadow-xl hover:text-white"><ion-icon name="newspaper-outline"></ion-icon></div>
-                            <div class="lg:text-2xl text-3xl hover:bg-blue-700 ease-in duration-300 text-pointer px-3 py-2 rounded-xl hover:shadow-xl hover:text-white"><ion-icon name="person-outline"></ion-icon></div>
+                            <div class="text-2xl bg-blue-700 ease-in duration-300 text-pointer px-3 py-2 rounded-xl shadow-xl text-white"><ion-icon name="home-outline"></ion-icon></div>
+                            <div class="text-2xl hover:bg-blue-700 ease-in duration-300 text-pointer px-3 py-2 rounded-xl hover:shadow-xl hover:text-white"><ion-icon name="file-tray-full-outline"></ion-icon></ion-icon></div>
+                            <div class="text-2xl hover:bg-blue-700 ease-in duration-300 text-pointer px-3 py-2 rounded-xl hover:shadow-xl hover:text-white"><ion-icon name="newspaper-outline"></ion-icon></div>
+                            <div class="text-2xl hover:bg-blue-700 ease-in duration-300 text-pointer px-3 py-2 rounded-xl hover:shadow-xl hover:text-white"><ion-icon name="person-outline"></ion-icon></div>
+                            <div class="lg:hidden flex text-2xl hover:bg-blue-700 ease-in duration-300 text-pointer px-3 py-2 rounded-xl hover:shadow-xl hover:text-white"><ion-icon name="search-outline"></ion-icon></div>
                         </div>
                     </div>
                     <div class="hidden lg:flex lg:flex-col space-y-4">
                         <div class="text-2xl hover:bg-blue-700 ease-in duration-300 text-pointer px-3 py-2 rounded-xl hover:shadow-xl hover:text-white"><ion-icon name="notifications-outline"></ion-icon></div>
                         <div class="text-2xl hover:bg-blue-700 ease-in duration-300 text-pointer px-3 py-2 rounded-xl hover:shadow-xl hover:text-white"><ion-icon name="log-out-outline"></ion-icon></div>
-
                     </div>
                 </div>
             </div>
-            <div class="md:flex-row flex flex-col items-center justify-center w-full">
-                <div class="flex-col flex items-center justify-start w-full lg:w-[25%] bg-white lg:bg-[#fafafa] overflow-y-scroll">
+            <div class="lg:flex-row flex flex-col items-center justify-center w-full">
+                <div class="flex-col flex items-center justify-start w-full lg:w-[25%] bg-white lg:bg-[#fafafa] h-screen overflow-y-scroll scrollbar-hide">
                     <div class="flex space-x-4 items-center justify-start lg:justify-center my-6 w-[80%]">
                         <div><img class="h-20 w-20 rounded-full overflow-hidden" src="http://source.unsplash.com/random/500x600/?person,man,boy" /></div>
                         <div>
@@ -68,7 +70,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="flex-col flex w-[80%] lg:w-3/4 space-y-4 bg-[#fafafa] lg:shadow-none p-6 rounded-2xl my-4 shadow-xl">
+                    <div class="flex-col flex w-[80%] lg:w-3/4 space-y-4 bg-[#fafafa] lg:shadow-none p-6 rounded-2xl lg:my-0 my-4 shadow-xl">
                         <div class="font-bold text-lg mt-4">Recent Transactions</div>
                         <div class="text-gray-500 pb-4 border-b-2">
                             <div class="font-medium text-xs">28-08-17</div>
@@ -84,9 +86,53 @@
                         </div>
                     </div>
                 </div>
-                <div class="lg:flex-row flex flex-col items-center justify-center lg:h-screen w-full bg-blue-900 ">
-                    <div class="h-72 lg:h-screen w-full lg:w-3/4 bg-fuchia-700">Graph</div>
-                    <div class="h-72 lg:h-screen w-full lg:w-1/4 bg-cyan-700">Update</div>
+                <div class="lg:flex-row flex-col flex items-center justify-center lg:h-screen w-full bg-blue-900 ">
+                    <div class="h-20 lg:h-screen w-full lg:w-3/4 bg-black">Graph</div>
+                    <div class="flex items-start justify-center lg:h-screen w-full lg:w-1/4 bg-white overflow-y-scroll scrollbar-hide">
+                        <div class="flex-col w-full lg:mt-10 mt-2">
+                            <div class="flex items-center justify-center">
+                                <div class="w-[90%] bg-[#fafafa] rounded-md p-3">
+                                    <div class="font-bold text-xl">Retirement Strategy</div>
+                                    <div class="flex flex-col mt-6">
+                                        <div class="my-2">
+                                            <div class="text-md font-bold">Employee Contribution</div>
+                                            <div class="flex space-x-3 items-center justify-between rounded">
+                                                <input id="contributionRange" type="range" min="0" max="100" value="32" class="w-[80%] h-1.5 appearance-none bg-gray-300 rounded outline-none opacity-70 transition duration-200" >
+                                                <p id="contributionValue" class="font-semibold bg-white p-2 rounded-lg">32%</p>
+                                            </div>                                        
+                                        </div>
+                                        <div class="my-2">
+                                            <div class="text-md font-bold">Retirement Age</div>
+                                            <div class="flex space-x-3 items-center justify-between rounded">
+                                                <input id="retirementRange" type="range" min="40" max="80" value="65" class="w-[80%] h-1.5 appearance-none bg-gray-300 rounded outline-none opacity-70 transition duration-200" >
+                                                <p id="retirementValue" class="font-semibold bg-white px-4 py-2 rounded-lg">65</p>
+                                            </div>                                        
+                                        </div>
+                                        <div class="w-80% h-0.5 my-6 bg-gray-300"></div>
+                                        <div class="flex my-2 text-sm font-bold items-center justify-between">
+                                            <div>Retirement Contribution</div>
+                                            <div>8.4%</div>
+                                        </div>
+                                        <div class="flex my-2 text-sm font-bold items-center justify-between">
+                                            <div>Interest</div>
+                                            <div>5%</div>
+                                        </div>
+                                        <button class="w-full bg-blue-700 py-2 my-4 rounded text-white text-lg hover:bg-blue-900 ease-in duration-300 shadow-xl">Update</button>
+                                        <a href="#" class="hover:text-black ease-in duration-300 text-sm text-blue-700 font-bold text-center">View Help Docs</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-center">
+                                <div class="p-4 border-l-2 border-blue-700 my-4 w-[90%]">
+                                    <div class="text-md font-medium">Are you considering a</div>
+                                    <div class="text-lg font-bold">House Advance?</div>
+                                    <div class="text-xs text-gray-500">Limited time reduced interest.</div>
+                                    <div class="text-md font-bold text-blue-700 hover:border-b-2 hover:border-blue-700 w-max cursor-pointer">Learn More</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
