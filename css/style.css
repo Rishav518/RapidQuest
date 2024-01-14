@@ -6,3 +6,15 @@
   -ms-overflow-style: none; 
   scrollbar-width: none; 
 }
+
+.progress-ring__circle {
+  stroke-dasharray: 400, 400;
+  transition: stroke-dashoffset 0.35s;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+.navbar.hidden {
+  transform: translateY(-100%);
+  transition: transform 0.3s;
+}
